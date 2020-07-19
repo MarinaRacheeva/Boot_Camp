@@ -130,30 +130,30 @@ img {
     }
 }
 
-.marks__item-action {
+.marks__item_action {
     background-color: #f7d33b;
     color: #333333;
 }
 
 .car:first-child
-.marks__item-action {
+.marks__item_action {
     display: none;
 }
 
-.marks__item-advice {
+.marks__item_advice {
     background-color: #7558cd;
 }
 
-.marks__item-new {
+.marks__item_new {
     background-color: #62c34b;
 }
 
-.marks__item-hit {
+.marks__item_hit {
     background-color: #e74650;
 }
 
 .car:first-child
-.marks__item-hit {
+.marks__item_hit {
     display: none;
 }
 

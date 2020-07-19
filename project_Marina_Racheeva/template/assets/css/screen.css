@@ -16,7 +16,7 @@ h2 {
 }
 
 h3 {
-
+    color: #333333;
 }
 
 p {
@@ -27,6 +27,7 @@ a:link,
 a:visited,
 a:active {
     text-decoration: none;
+    color: #333333;
 }
 
 a:hover {
@@ -59,11 +60,11 @@ img {
     display: flex;
     flex-flow: row nowrap;
     flex: 0 1 100%;
-    padding: 28px 26px 21px 24px;
+    padding: 27px 26px 22px 24px;
 }
 @media (max-width: 480px) {
     .car__item {
-        padding: 35px 50px 37px 50px;
+        padding: 37px 50px 28px 53px;
         border: none;
     }
 }
@@ -81,12 +82,11 @@ img {
 .car__photo {
     display: block;
     flex: 0 0 116px;
-    margin: 0 25px 0 0;
     position: relative;
 }
 @media (max-width: 480px){
     .car__photo {
-        flex: 0 0 378px;
+        flex: 0 0 378px;       
     }
 }
 
@@ -97,7 +97,7 @@ img {
 
 /*------------------------------marks-----------------------------------*/
 .marks {
-    margin: -4px 0 0 0;
+    margin: -2px 0 0 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -119,14 +119,14 @@ img {
     float: left;
     font-size: 9px;
     margin: 1px;
-    padding: 6px 6px 5px 7px;
+    padding: 5px 6px 5px 7px;
     width: fit-content;
 }
 @media (max-width: 480px){
     .marks__item {
         font-size: 12px;
         margin: 2px;
-        padding: 7px 7px 7px 7px;
+        padding: 7px 8px 7px 9px;
     }
 }
 
@@ -162,15 +162,21 @@ img {
     display: flex;
     flex: 0 1 100%;
     flex-flow: column nowrap;
+    padding: 0 0 0 25px;
+    position: relative;
+}
+@media (max-width: 480px){
+    .car__info {
+        padding: 29px 0 0 0;
+    } 
 }
 
 a.car__name {
-    color: #333333;
+    
 }
 @media (max-width: 480px){
     a.car__name {
         font-size: 16px;
-        padding: 9px 0 0 0;
     }
 }
 
@@ -182,14 +188,13 @@ a.car__name:hover {
     font-size: 9.5px;
     flex: 0 1 auto;
     line-height: 15.5px;
-    padding: 10px 62px 15px 0;
+    padding: 10px 62px 16px 0;
 }
 @media (max-width: 480px){
     .car__description {
         font-size: 13px;
-        padding: 23px 0;
-        line-height: 19px;
-            
+        padding: 20px 0 19px 0;
+        line-height: 19px;           
     }
 }
 
@@ -205,94 +210,95 @@ a.car__name:hover {
     } 
 }
 
-.character__name {
-	float: left; 
-}
-
-.character__dash {
-    padding: 0 7px 0 4px;
+.character__name::after{
+    content: "—";
+    padding: 0 4px 0 8px;
 }
 @media (max-width: 480px){
-    .character__dash {
-        padding: 0 12px;
-        
+    .character__name::after {
+        padding: 0 8px 0 12px;
     }
 }
 
 .character__value {
-	color: #333333;
+    color: #333333;
+    
+
 }
 
-/*------------------------------buy-----------------------------------*/
-.buy{
+/*------------------------------car__buy-----------------------------------*/
+.car__buy{
     display: flex;
     flex-flow: column nowrap;
+    
 }
 @media (max-width: 480px){
-    .buy{
+    .car__buy{
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        padding: 38px 0 0 0;
+        padding: 35px 0 0 0;
+        margin: 0 0 0 -1px;
     }   
 }
 
-.buy__instruments {
+.car__buy-instruments {
     flex: 0 1;
     flex-flow: column nowrap;
+    margin: -1px 0 10px 0;
 }
 @media (max-width: 480px){
-    .buy__instruments {    
-        flex-flow: column wrap;
+    .car__buy-instruments {    
+        flex-flow: column wrap;  
+          
     }
 }
 
-.buy__status {
+.car__buy-status {
     font-size: 8px;
-    margin: -3px 0 0 0;
     text-transform: uppercase;
     padding: 0 0 13px 0px;
 }
 @media (max-width: 480px){
-    .buy__status {
+    .car__buy-status {
         font-size: 11px;
-        padding: 0 0 20px 0px;
+        padding: 0 0 18px 0px;
     }  
 }
 
-.buy__status_wait {
+.status_wait {
 	color: #f28c29;
 }
 
-.buy__status_in-stock {
+.status_in-stock {
 	color: #5fa800;
 }
 
-.buy__price {
+.car__buy-price {
     color: #333333; 
     font-size: 12.5px;
     font-weight: bold;
 }
 @media (max-width: 480px){
-    .buy__price {
+    .car__buy-price {
         font-size: 17px;
     }
 }
 
-.buy__old-price {
+.car__buy-old-price {
     font-size: 9.5px;
     text-decoration: line-through;
     padding: 8px 0 0 0;
 }
 @media (max-width: 480px){
-    .buy__old-price {
+    .car__buy-old-price {
         font-size: 13px;
-        padding: 12px 0 0 0;
+        padding: 11px 0 0 0;
     }
 }
 
-/*------------------------------buy__quantity-----------------------------------*/
-.buy__quantity {
+/*------------------------------car__buy-quantity-----------------------------------*/
+.car__buy-quantity {
     background-color: #f8f9fb;
     box-sizing: border-box;
     border: 1px solid #f0f0f1;
@@ -301,12 +307,14 @@ a.car__name:hover {
     display: flex;
     justify-content: space-between;
     flex: 0 1;
-    margin: 14px 0 0 0;
+    height: 26px;
+    margin: 14px 0 2px 0;
     width: 139px;
 }
 @media (max-width: 480px){
-    .buy__quantity {
+    .car__buy-quantity {
         box-sizing: border-box;
+        height: 35px;
         margin: 20px 0 0 0;
         width: 193px;
     }
@@ -336,12 +344,12 @@ a.buy__quantity-btn-plus {
 }
 
 .plus-img {
-    padding: 0 5px 0 0;
+    padding: 4px 3px 0 0;
     width: 15px;
 }
 @media (max-width: 480px){
     .plus-img {
-        padding: 4px 7px 0 0;
+        padding: 9px 9px 0 0;
         width: 15px;
     }
 }
@@ -355,60 +363,72 @@ a.buy__quantity-btn-plus:hover {
     border: none;
     color: #777777;
     font-size: 9px;
-    padding: 0 0 0 1px;
+    padding: 0 0 0 3px;
     text-align: center;
     width: 20px;
+    outline: none;  
 }
 @media (max-width: 480px){
     .buy__quantity-count {
         font-size: 13px;
+        padding: 0 0 0 2px;
     }
 }
-
+.buy__quantity-count::-webkit-inner-spin-button,
+.buy__quantity-count::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin:0;
+}
 /*------------------------------button-----------------------------------*/
-a.btn {
-
+.btn {
     background-color: #2b7de0;
     border-radius: 2px;
+    border: none;
     box-sizing: border-box;
     color: #ffffff;
     display: inline-block;
     flex: 0 1;
     font-size: 8.5px;
+    font-family: 'Montserrat', sans-serif;
     height: 26px;
     margin: 1px 0 0 0;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 10px 0;
+    padding: 5px 0;
     width: 139px;
 }
 @media (max-width: 480px){
-    a.btn {
+    .btn {
         box-sizing: border-box;
         flex: 0 1;
         font-size: 12px;
-        height: 36px;
+        height: 35px;
         margin: 4px 0 0 0;
         text-decoration: none;
-        padding: 13px 0;
+        padding: 10px 0;
         width: 193px;
     }
 }
 
-a.btn:hover {
-
+.btn:hover {
 }
 
 /*------------------------------buy__info-----------------------------------*/
 .info {
     display: flex;
     justify-content: flex-start;
-    padding: 6px 0 0 0;
 }
 @media (max-width: 480px){
     .info {
-        justify-content: flex-end;
+       justify-content: flex-end;
+       padding: 13px 0 0 257px;
+       position: absolute;
+    }
+    .car:nth-child(2)
+    .info {
+       padding: 13px 0 0 176px;
+       position: absolute;
     }
 }
 
@@ -418,11 +438,11 @@ a.btn:hover {
 }
 
 .info__logo_size {
-    width: 12px;
+    width: 13px;
 }
 @media (max-width: 480px){
     .info__logo_size {
-        width: 16px;
+        width: 17px;
     } 
 }
 
@@ -437,6 +457,6 @@ a.btn:hover {
         align-self: flex-start;
         font-size: 12px;
         line-height: 18px;
-        padding: 6px 0 0 0;
+        padding: 0 0 0 2px;        
     }   
 }

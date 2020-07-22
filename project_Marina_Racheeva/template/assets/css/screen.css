@@ -53,7 +53,7 @@ img {
     }
 }
 
-/*------------------------------car-item-----------------------------------*/
+/*------------------------------car__item-----------------------------------*/
 .car__item {
     border: 1px solid #f5f6f9;
     border-top: none;
@@ -66,19 +66,11 @@ img {
     .car__item {
         padding: 37px 50px 28px 53px;
         border: none;
-    }
-}
-
-.car {
-
-}
-@media (max-width: 480px){
-    .car {
         flex-flow: column nowrap;
     }
 }
 
-/*------------------------------car-photo-----------------------------------*/
+/*------------------------------car__photo-----------------------------------*/
 .car__photo {
     display: block;
     flex: 0 0 116px;
@@ -135,7 +127,7 @@ img {
     color: #333333;
 }
 
-.car:first-child
+.car--ponevira
 .marks__item--action {
     display: none;
 }
@@ -152,12 +144,12 @@ img {
     background-color: #e74650;
 }
 
-.car:first-child
+.car--ponevira
 .marks__item--hit {
     display: none;
 }
 
-/*------------------------------car-info-----------------------------------*/
+/*------------------------------car__info-----------------------------------*/
 .car__info {
     display: flex;
     flex: 0 1 100%;
@@ -184,27 +176,39 @@ a.car__name:hover {
     color: #2b7de0;
 }
 
-.car__description {
-    font-size: 9.5px;
+.car__description {   
     flex: 0 1 auto;
-    line-height: 15.5px;
     padding: 10px 62px 16px 0;
 }
 @media (max-width: 480px){
     .car__description {
-        font-size: 13px;
-        padding: 20px 0 19px 0;
-        line-height: 19px;           
+        padding: 20px 0 19px 0;        
     }
 }
 
-.car__character {
-    flex: 1 1 100%;
+.description {
     font-size: 9.5px;
     line-height: 15.5px;
 }
 @media (max-width: 480px){
-    .car__character {
+    .description {
+        font-size: 13px;
+        line-height: 19px;           
+    }
+}
+
+/*------------------------------car__character-----------------------------------*/
+.car__character {
+    flex: 1 1 100%;
+    display: block;
+}
+
+.character{
+    font-size: 9.5px;
+    line-height: 15.5px;
+}
+@media (max-width: 480px){
+    .character {
         font-size: 13px;
         line-height: 21px;
     } 
@@ -239,6 +243,7 @@ a.car__name:hover {
     }   
 }
 
+/*------------------------------car__buy-instruments-----------------------------------*/
 .car__buy-instruments {
     flex: 0 1;
     flex-flow: column nowrap;
@@ -250,15 +255,22 @@ a.car__name:hover {
     }
 }
 
-.car__buy-status {
-    font-size: 8px;
-    text-transform: uppercase;
+.buy__status {   
     padding: 0 0 12px 0px;
 }
 @media (max-width: 480px){
-    .car__buy-status {
-        font-size: 11px;
+    .buy__status {
         padding: 0 0 18px 0px;
+    }  
+}
+
+.status{
+    font-size: 8px;
+    text-transform: uppercase;
+}
+@media (max-width: 480px){
+    .status {
+        font-size: 11px;
     }  
 }
 
@@ -270,26 +282,33 @@ a.car__name:hover {
 	color: #5fa800;
 }
 
-.car__buy-price {
+.buy__price {
     color: #333333; 
     font-size: 12.5px;
     font-weight: bold;
 }
 @media (max-width: 480px){
-    .car__buy-price {
+    .buy__price {
         font-size: 17px;
     }
 }
 
-.car__buy-old-price {
-    font-size: 9.5px;
-    text-decoration: line-through;
+.buy__old-price {
     padding: 8px 0 0 0;
 }
 @media (max-width: 480px){
-    .car__buy-old-price {
-        font-size: 13px;
+    .buy__old-price {
         padding: 11px 0 0 0;
+    }
+}
+
+.old-price{
+    font-size: 9.5px;
+    text-decoration: line-through;
+}
+@media (max-width: 480px){
+    .old-price {
+        font-size: 13px;
     }
 }
 
@@ -373,7 +392,7 @@ a.buy__quantity-btn-plus:hover {
 .buy__quantity-count::-webkit-inner-spin-button,
 .buy__quantity-count::-webkit-outer-spin-button {
     -webkit-appearance: none; 
-    margin:0;
+    margin: 0;
 }
 
 /*------------------------------button-----------------------------------*/
@@ -414,18 +433,18 @@ a.buy__quantity-btn-plus:hover {
 }
 
 /*------------------------------buy__info-----------------------------------*/
-.info {
+.buy__info {
     display: flex;
     justify-content: flex-start;
 }
 @media (max-width: 480px){
-    .info {
+    .buy__info {
        justify-content: flex-end;
        padding: 13px 0 0 257px;
        position: absolute;
     }
-    .car:nth-child(2)
-    .info {
+    .car--mocen
+    .buy__info {
        padding: 13px 0 0 176px;
        position: absolute;
     }
@@ -434,13 +453,10 @@ a.buy__quantity-btn-plus:hover {
 .info__logo {
     color: #777777;
     padding: 0 5px 0 0;
-}
-
-.info__logo--size {
     width: 13px;
 }
 @media (max-width: 480px){
-    .info__logo--size {
+    .info__logo {
         width: 17px;
     } 
 }
@@ -453,7 +469,6 @@ a.buy__quantity-btn-plus:hover {
 }
 @media (max-width: 480px){
     .info__description {
-        align-self: flex-start;
         font-size: 12px;
         line-height: 18px;
         padding: 0 0 0 2px;        

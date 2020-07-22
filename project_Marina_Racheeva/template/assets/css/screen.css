@@ -60,7 +60,7 @@ img {
     display: flex;
     flex-flow: row nowrap;
     flex: 0 1 100%;
-    padding: 27px 26px 22px 24px;
+    padding: 27px 26px 25px 24px;
 }
 @media (max-width: 480px) {
     .car__item {
@@ -130,30 +130,30 @@ img {
     }
 }
 
-.marks__item_action {
+.marks__item--action {
     background-color: #f7d33b;
     color: #333333;
 }
 
 .car:first-child
-.marks__item_action {
+.marks__item--action {
     display: none;
 }
 
-.marks__item_advice {
+.marks__item--advice {
     background-color: #7558cd;
 }
 
-.marks__item_new {
+.marks__item--new {
     background-color: #62c34b;
 }
 
-.marks__item_hit {
+.marks__item--hit {
     background-color: #e74650;
 }
 
 .car:first-child
-.marks__item_hit {
+.marks__item--hit {
     display: none;
 }
 
@@ -222,15 +222,12 @@ a.car__name:hover {
 
 .character__value {
     color: #333333;
-    
-
 }
 
 /*------------------------------car__buy-----------------------------------*/
 .car__buy{
     display: flex;
     flex-flow: column nowrap;
-    
 }
 @media (max-width: 480px){
     .car__buy{
@@ -250,14 +247,13 @@ a.car__name:hover {
 @media (max-width: 480px){
     .car__buy-instruments {    
         flex-flow: column wrap;  
-          
     }
 }
 
 .car__buy-status {
     font-size: 8px;
     text-transform: uppercase;
-    padding: 0 0 13px 0px;
+    padding: 0 0 12px 0px;
 }
 @media (max-width: 480px){
     .car__buy-status {
@@ -266,11 +262,11 @@ a.car__name:hover {
     }  
 }
 
-.status_wait {
+.status--wait {
 	color: #f28c29;
 }
 
-.status_in-stock {
+.status--in-stock {
 	color: #5fa800;
 }
 
@@ -379,6 +375,7 @@ a.buy__quantity-btn-plus:hover {
     -webkit-appearance: none; 
     margin:0;
 }
+
 /*------------------------------button-----------------------------------*/
 .btn {
     background-color: #2b7de0;
@@ -411,7 +408,9 @@ a.buy__quantity-btn-plus:hover {
     }
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
+    outline: none;
 }
 
 /*------------------------------buy__info-----------------------------------*/
@@ -437,11 +436,11 @@ a.buy__quantity-btn-plus:hover {
     padding: 0 5px 0 0;
 }
 
-.info__logo_size {
+.info__logo--size {
     width: 13px;
 }
 @media (max-width: 480px){
-    .info__logo_size {
+    .info__logo--size {
         width: 17px;
     } 
 }

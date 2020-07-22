@@ -7,7 +7,8 @@ jQuery(function () {
         let count = parseInt($input.val().replace(/[^\d]/g, ''));
         switch (sign) {
             case 'minus': {
-                count = (count < 1) ? 1 : count--;
+                if (count <= 1) count = 1;
+                else count--;
                 break;
             }
             case 'plus': { 

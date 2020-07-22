@@ -335,8 +335,12 @@ a.car__name:hover {
     }
 }
 
-a.buy__quantity-btn-minus {
+a.buy__quantity-btn {
     color: #333333;
+}
+
+a.buy__quantity-btn:hover {
+    color: #5194e5;
 }
 
 .minus-img {
@@ -350,14 +354,6 @@ a.buy__quantity-btn-minus {
     }
 }
 
-a.buy__quantity-btn-minus:hover {
-    color: #5194e5;
-}
-
-a.buy__quantity-btn-plus {
-    color: #333333;
-}
-
 .plus-img {
     padding: 4px 3px 0 0;
     width: 15px;
@@ -367,10 +363,6 @@ a.buy__quantity-btn-plus {
         padding: 9px 9px 0 0;
         width: 15px;
     }
-}
-
-a.buy__quantity-btn-plus:hover {
-    color: #5194e5;
 }
 
 .buy__quantity-count {

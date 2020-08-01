@@ -1,22 +1,17 @@
 <?php
-
-const DB_HOST = 'localhost';
-const DB_LOGIN = 'root';
-const DB_PASS = 'root';
-const DB_NAME = 'company';
-
-$link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASS, DB_NAME) 
-or die(mysqli_connect_error());
-
-function clearStr($data) {
+require 'includes/lib.php';
+function clearStr($data) 
+{
     global $link;
     $data = trim(strip_tags($data));
     return mysqli_real_escape_string($link, $data);
 }
-function clearInt($data){
+function clearInt($data)
+{
     return abs((int)$data);
 }
 
+// если получаем данные из формы обратной связи, то записываем их в БД и отправляем письмом
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $name = clearStr($_POST["feedback-author"]);
@@ -47,10 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (!$mail)
         echo '<p class="success">Ошибка отправки</p>';
     else
-        echo '<p class="fail">Благодарим за ваше письмо. Мы свяжемся с вами в ближайшее время.</p>';    
-
-   header("Location: " . $_SERVER["REQUEST_URI"]);
-   exit;
-}   
-//mysqli_close($link);
-?>
+        header("Location: " . $_SERVER["REQUEST_URI"]);
+        echo '<p>Благодарим за ваше письмо. Мы свяжемся с вами в ближайшее время.</p>';    
+        exit;
+} 

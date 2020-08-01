@@ -1,20 +1,28 @@
 <?php
+require 'includes/lib.php';
+$sql = "SELECT * FROM Category";
+$res = mysqli_query($link, $sql);
 
-const DB_HOST = 'localhost';
-const DB_LOGIN = 'root';
-const DB_PASS = 'root';
-const DB_NAME = 'company';
+//массив для вывода меню в нужных частях сайта
+$menu = [
+        ['link' => 'Главная', 'href' => 'index.php'],
+        ['link' => 'Каталог', 'href' => 'catalog.php'],
+        ['link' => 'О компании', 'href' => 'about.php'],
+        ['link' => 'Новости', 'href' => 'news.php'],
+        ['link' => 'Доставка и оплата', 'href' => 'paydelivery.php'],
+        ['link' => 'Контакты', 'href' => 'contacts.php']
+    ];
 
-$link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASS, DB_NAME) 
-or die(mysqli_connect_error());
-
-
-    $sql = "SELECT * FROM Category";
-    $res = mysqli_query($link, $sql);
-           
-    
-    
-    
-
-
-?>
+// выбор заголовка страницы
+switch ($_SERVER['PHP_SELF'])
+{
+    case '/index.php': $title = 'Главная'; break;
+    case '/catalog.php': $title = 'Каталог'; break;
+    case '/about.php': $title = 'О компании'; break;
+    case '/news.php': $title = 'Новости'; break;
+    case '/news-detail.php': $title = 'Новость'; break;
+    case '/paydelivery.php': $title = 'Доставка и оплата'; break;
+    case '/contacts.php': $title = 'Контакты'; break;
+    case '/product.php': $title = 'Товар'; break;
+    case '/404.php': $title = 'Страницы на существует'; break;
+}

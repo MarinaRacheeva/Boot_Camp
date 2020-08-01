@@ -1,14 +1,12 @@
 <?php 
 ob_start();
 include 'template_header.php';
-include 'application/models/contacts.php';
+require 'application/models/contacts.php';
 ?>
-
 <div class="content">
     <div class="wrapper content__wrapper">
         <main class="inside-content">
             <h1 class="contacts-page__main-headline">Контакты</h1>
-            
             <table class="contacts-section">
                 <tbody>
                     <tr>
@@ -64,9 +62,8 @@ include 'application/models/contacts.php';
                 <p class="feedback-form__hint">
                     <span class="required-star">*</span> — обязательные для заполнения поля
                 </p>
-                               
                 <form method="POST" class="registration-form" name="contats-page__feedback-form">
-                <p class="msgs"></p>
+                    <p class="msgs"></p>
                     <div class="feedback-form__row">
                         <label class="inner-label" for="feedback-author">
                             Имя <span class="required-star">*</span>
@@ -104,15 +101,9 @@ include 'application/models/contacts.php';
                         </div>
                     </div>
                 </form>
-
             </section>
-                 
         </main>
-
-
-        <?php include 'left_block.php' ?>
-
+        <?php include_once 'sidebar.php' ?>
     </div>
 </div>
-
 <?php include 'template_footer.php' ?>

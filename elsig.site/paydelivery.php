@@ -1,5 +1,4 @@
 <?php include 'template_header.php' ?>
-
 <div class="content">
     <div class="wrapper content__wrapper">
         <main class="inside-content">
@@ -28,10 +27,7 @@
                 <p><i>Также, Вы имеете возможность приобрести товары в нашем шоу-руме на м.Сходненская</i></p>
             </article>
         </main>
-
-        <?php include 'left_block.php' ?>
-
+        <?php include_once 'sidebar.php' ?>
     </div>
 </div>
-
 <?php include 'template_footer.php' ?>

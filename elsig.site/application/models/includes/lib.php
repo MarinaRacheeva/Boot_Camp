@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		}
 	}
 
-	if ($_GET['id']) 
+	if ($_GET['id'] && ($_SERVER['SCRIPT_NAME'] == '/product.php')) 
 	{
 		$sql = "SELECT id FROM Product";
         $res = mysqli_query($link, $sql);
@@ -47,5 +47,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
             header('Location: 404.php');
 		}
+	}
+
+	if ($_GET['id'] && ($_SERVER['SCRIPT_NAME'] == '/news-detail.php')) 
+	{
+		$sql = "SELECT id FROM News";
+        $res = mysqli_query($link, $sql);
+        foreach ($res as $new)
+        {
+            $mas_new[] = $new['id'];
+        }
+        if (!in_array($_GET['id'], $mas_new))
+        {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+            header('Location: 404.php');
+		}
+	}
+	elseif (!$_GET['id'] && ($_SERVER['SCRIPT_NAME'] == '/news-detail.php'))  {
+		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+		header('Location: 404.php');
 	}
 }

@@ -16,4 +16,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		}
 		else header("Location: " . $_SERVER["PHP_SELF"] . '?price_from=' . $_POST["cost-from"] . '&price_to=' . $_POST["cost-to"]); 
 	}
-} 
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+	if ($_GET['cat_id']) 
+	{
+		$sql = "SELECT id FROM Category";
+        $res = mysqli_query($link, $sql);
+        foreach ($res as $cat)
+        {
+            $mas_cat[] = $cat['id'];
+        }
+        if (!in_array($_GET['cat_id'], $mas_cat))
+        {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+            header('Location: 404.php');
+		}
+	}
+
+	if ($_GET['id']) 
+	{
+		$sql = "SELECT id FROM Product";
+        $res = mysqli_query($link, $sql);
+        foreach ($res as $prod)
+        {
+            $mas_prod[] = $prod['id'];
+        }
+        if (!in_array($_GET['id'], $mas_prod))
+        {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+            header('Location: 404.php');
+		}
+	}
+}

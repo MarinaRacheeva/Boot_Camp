@@ -2,19 +2,15 @@
 
 
 ////от этого куска легко избавиться, поменяв в форме фильтра action=POST на action=GET
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+/*if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	if (!$_SERVER['QUERY_STRING'])
-		header("Location: " . $_SERVER["REQUEST_URI"] . '?price_from=' . $_POST["cost-from"] . '&price_to=' . $_POST["cost-to"]);
-	else
-	{
 		if ($_GET['cat_id']){
 			$str = explode("&", $_SERVER["REQUEST_URI"]);
-			header("Location: " . $str[0] . '&price_from=' . $_POST["cost-from"] . '&price_to=' . $_POST["cost-to"]);
+			header("Location: " . $str[0] . '&cost-from=' . $_POST["cost-from"] . '&cost-to=' . $_POST["cost-to"]);
 		}
-		else header("Location: " . $_SERVER["PHP_SELF"] . '?price_from=' . $_POST["cost-from"] . '&price_to=' . $_POST["cost-to"]);
-	}
-}
+		else header("Location: " . $_SERVER["PHP_SELF"] . '?cost-from=' . $_POST["cost-from"] . '&cost-to=' . $_POST["cost-to"]);
+
+}*/
 
 //// в концепции mvc данный файл является контроллером. здесь мы не работаем с хранилищем данных, а можем только проверить параметры на их
 ///  адекватность нашим ожиданиям. Например, мы ожидаем, что cat_id — это целое положительное число в диапазоне от 1 и далее. или же оно не

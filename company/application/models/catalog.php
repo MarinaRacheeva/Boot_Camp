@@ -9,12 +9,11 @@ if (isset($_GET['page']))
 }
 
 $start = ($page * KOL_PROD) - KOL_PROD;
-//$sql_bc = "SELECT id, name FROM Category"
 
 // выбор товаров по категориям
 $cat_id = clearInt($_GET["cat_id"]);
-$priceMin = clearInt($_GET["price_from"]);
-$priceMax = clearInt($_GET["price_to"]);
+$priceMin = clearInt($_GET["cost-from"]);
+$priceMax = clearInt($_GET["cost-to"]);
 
 $sql = "SELECT * FROM Product p";
 $ifcat = " JOIN Product_category pc ON pc.product_id = p.id WHERE (pc.category_id = $cat_id)";
@@ -22,7 +21,7 @@ $sql_kol = "SELECT COUNT(*) as kol FROM product p";
 
 if ($cat_id)
 {
-    if ($_GET["price_from"] || $_GET["price_to"])
+    if ($_GET["cost-from"] || $_GET["cost-to"])
     {
         $sql = $sql . $ifcat . " AND (p.price BETWEEN $priceMin AND $priceMax) LIMIT $start, " . KOL_PROD;
         $sql_kol = $sql_kol . $ifcat . " AND (p.price BETWEEN $priceMin AND $priceMax)";
@@ -36,7 +35,7 @@ if ($cat_id)
 }
 else
 {
-    if ($_GET["price_from"] || $_GET["price_to"])
+    if ($_GET["cost-from"] || $_GET["cost-to"])
     {
         $sql = $sql . " WHERE (p.price BETWEEN $priceMin AND $priceMax) LIMIT $start, " . KOL_PROD;
         $sql_kol = $sql_kol . " WHERE (p.price BETWEEN $priceMin AND $priceMax)";        

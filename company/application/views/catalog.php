@@ -26,7 +26,7 @@
     </nav>
 
     <?//// в форму надо подставлять введённые ранее значения?>
-    <form class="search-filter" id="catalog-page__search-filter-1" method="POST">
+    <form class="search-filter" id="catalog-page__search-filter-1" method="GET" action="catalog.php">
         <span class="search-filter__item">
             <label class="search-filter__label" for="cost-from">Цена</label>
             <input class="search-filter__input" step="0.01" type="number" min="0" name="cost-from" id="cost-from"
@@ -43,7 +43,7 @@
         //// это во вьюху
         
 
-        if ($_GET["price_from"] || $_GET["price_to"])
+        if ($_GET["cost-from"] || $_GET["cost-to"])
         {
             if ($pr_kol == 0)
                 echo '<p> По вашему запросу товаров не найдено :( </p> ';
@@ -71,9 +71,7 @@
             if ($_GET["cat_id"])
             {
                 echo '<a class="category__link" href="product.php?id='. $product["id"] .'&cat_id=' . $product["category_id"] . '">';
-               /* пробуем добавить в массив меню адреса с запросами (не получилось) $address = 'product.php?id='. $product["product_id"] .'&cat_id=' . $product["category_id"];
-                            $title = $product["product_name"];
-                            $menu += [$address => $title];*/
+
             }
             else
             {

@@ -1,8 +1,4 @@
 <?php 
-require 'template/header.php';?> 
-<main class="inside-content">
-    <h1 class="contacts-page__main-headline">Ошибка: 404</h1>
-    <h2>Извините, такой страницы не существует</h2>
-    <span><a href="index.php">На главную</a></span>
-</main>
-<? require 'template/footer.php' ?>
+header('Location: /404.php');
+header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+require 'application/views/404.php';

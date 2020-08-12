@@ -3,7 +3,9 @@
     define('DB_LOGIN', 'root');
     define('DB_PASS', 'root');
     define('DB_NAME', 'company');
-    define("KOL_PROD", 12);
+    define("KOL_PROD", 1); //количество товаров на странице
+    define("KOL_NEWS", 6); //количество новостей на странице
+    define("KOL_NEWS_SB", 6); //количество новостей в сайдбаре
    
 $menu = [
     '/index.php' => 'Главная',
@@ -12,9 +14,5 @@ $menu = [
     '/news.php' => 'Новости',
     '/paydelivery.php' => 'Доставка и оплата',
     '/contacts.php' => 'Контакты',
-    '/news-detail.php' => 'Новость',
-    '/product.php' => 'Товар',
-    '/404.php' => 'Страницы на существует' 
-];
 
-    $page = 1;
+];
